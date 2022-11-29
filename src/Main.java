@@ -6,12 +6,12 @@ public class Main {
     public static void main(String[] args) {
         Queue<Person> attraction = new LinkedList<>();
         attraction.addAll(generateClients());
-//        for (int i = 0; i < generateClients().size(); i++) {
-//            Person tmp = generateClients().get(i);
-//            attraction.offer(tmp);
-//        }
 
-        System.out.println(attraction);
+        for(Person p : attraction){
+            System.out.println(p.getName());
+        }
+
+        //System.out.println(attraction);
 
     }
 
