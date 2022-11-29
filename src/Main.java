@@ -24,6 +24,7 @@ public class Main {
         person.add(new Person("Jack", "Ko", 4));
         person.add(new Person("Max", "Woo", 1));
 
+
         return person;
 
     }
