@@ -4,17 +4,18 @@ import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
-        Queue<Person> attraction = new LinkedList<>(generateClients());
+        Queue<Person> attraction = new LinkedList<>();
+        attraction.addAll(generateClients());
 //        for (int i = 0; i < generateClients().size(); i++) {
 //            Person tmp = generateClients().get(i);
-//            attraction.add(tmp);
+//            attraction.offer(tmp);
 //        }
 
         System.out.println(attraction);
 
     }
 
-    public static List<Person> generateClients() {
+    public static LinkedList<Person> generateClients() {
 
         LinkedList<Person> person = new LinkedList<>();
 
