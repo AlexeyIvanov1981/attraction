@@ -1,20 +1,18 @@
-import java.util.Iterator;
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
 
-        Queue<Person> attraction = new LinkedList<>(generateClients());
-
-        Iterator<Person> personIterator = attraction.iterator();
+        Deque<Person> attraction = generateClients();
 
         while (!attraction.isEmpty()) {
-            Person person = personIterator.next();
-            System.out.println(person.getName() + " " + person.getSurname() + ", количество билетов - " + person.getNumberOfTickets());
-            person.deleteTicket();
-            if (person.getNumberOfTickets() == 0) {
-                personIterator.remove();
+            Person user = attraction.removeFirst();
+            System.out.println(user.getName() + " " + user.getSurname() + " прокатился на атракционе (кол-во билетов " + user.getNumberOfTickets() + ")");
+            user.deleteTicket();
+
+            if (user.getNumberOfTickets() > 0) {
+                attraction.addLast(user);
             }
         }
     }
