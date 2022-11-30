@@ -8,7 +8,8 @@ public class Main {
 
         while (!attraction.isEmpty()) {
             Person user = attraction.removeFirst();
-            System.out.println(user.getName() + " " + user.getSurname() + " прокатился на атракционе (кол-во билетов " + user.getNumberOfTickets() + ")");
+            System.out.println(user.getName() + " " + user.getSurname() + " прокатился на атракционе (кол-во билетов "
+                    + user.getNumberOfTickets() + ")");
             user.deleteTicket();
 
             if (user.getNumberOfTickets() > 0) {
