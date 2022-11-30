@@ -1,7 +1,7 @@
 public class Person {
-    String name;
-    String surname;
-    int numberOfTickets;
+    private String name;
+    private String surname;
+    private int numberOfTickets;
 
     public Person(String name, String surname, int numberOfTickets){
 
@@ -18,6 +18,10 @@ public class Person {
         return surname;
     }
     public int getNumberOfTickets() {
+        return numberOfTickets;
+    }
+    public int deleteTicket(){
+        this.numberOfTickets -= 1;
         return numberOfTickets;
     }
 }

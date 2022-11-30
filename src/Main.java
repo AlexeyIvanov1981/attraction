@@ -1,14 +1,21 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
 
-        Queue<Person> attraction = new LinkedList<>();
-        attraction.addAll(generateClients());
+        Queue<Person> attraction = new LinkedList<>(generateClients());
 
-        for (Person p : attraction) {
-            System.out.println(p.getName() + " " + p.getSurname() + ", количество билетов - " + p.numberOfTickets);
+        Iterator<Person> personIterator = attraction.iterator();
+
+        while (!attraction.isEmpty()) {
+            Person person = personIterator.next();
+            System.out.println(person.getName() + " " + person.getSurname() + ", количество билетов - " + person.getNumberOfTickets());
+            person.deleteTicket();
+            if (person.getNumberOfTickets() == 0) {
+                personIterator.remove();
+            }
         }
     }
 
@@ -22,8 +29,6 @@ public class Main {
         person.add(new Person("Jack", "Kovalsky", 4));
         person.add(new Person("Max", "Woo", 1));
 
-
         return person;
-
     }
 }
