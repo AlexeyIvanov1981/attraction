@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -5,13 +6,14 @@ import java.util.Queue;
 public class Main {
     public static void main(String[] args) {
         Queue<Person> attraction = new LinkedList<>();
-        attraction.addAll(generateClients());
-//        for (int i = 0; i < generateClients().size(); i++) {
-//            Person tmp = generateClients().get(i);
-//            attraction.offer(tmp);
-//        }
 
-        System.out.println(attraction);
+        attraction.addAll(generateClients());
+
+        while (!attraction.isEmpty()) {
+            System.out.println(attraction.poll());
+        }
+
+
 
     }
 
@@ -24,6 +26,7 @@ public class Main {
         person.add(new Person("Tom", "Lo", 2));
         person.add(new Person("Jack", "Ko", 4));
         person.add(new Person("Max", "Woo", 1));
+        //System.out.println("List" + person);
 
 
         return person;
